@@ -1,0 +1,1165 @@
+/*======reset css======*/
+body{
+    font-size: 14px;
+    font-family: "Microsoft YaHei",sans-serif;
+    color: #333;
+}
+a{
+    text-decoration: none;
+    color: #333;
+}
+a:hover{
+    text-decoration: none;
+    color: #333;
+}
+/*自定义字体图标*/
+/*1.通过@font-face定义自己的字体*/
+@font-face {
+    font-family: 'icomoon';
+    src:
+            url(../fonts/icomoon.svg) format('svg'),
+            url(../fonts/icomoon.eot) format('embedded-opentype'),
+            url(../fonts/icomoon.ttf) format('truetype'),
+            url(../fonts/icomoon.woff) format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+[class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 48px;
+}
+
+.icon-金融n货币－14:before {
+    content: "\e909";
+}
+.icon-金融n货币－28:before {
+    content: "\e90a";
+}
+.icon-金融n货币－33:before {
+    content: "\e90b";
+}
+.icon-金融-icon:before {
+    content: "\e90c";
+}
+
+
+@font-face {
+    /*2.申明自己的字体名称*/
+    font-family: 'xef';
+    /*3.引入字体文件（约束某一段字符代码什么图案）*/
+    src:
+    url(../fonts/MiFie-Web-Font.svg) format('svg'),
+    url(../fonts/MiFie-Web-Font.eot) format('embedded-opentype'),
+    url(../fonts/MiFie-Web-Font.ttf) format('truetype'),
+    url(../fonts/MiFie-Web-Font.woff) format('woff');
+}
+/*4.怎么使用维护性更好*/
+.xef_icon{
+    font-family: xef;
+}
+.xef_icon_phone::before{
+    content: "\e908";
+}
+.xef_icon_tel::before{
+    content: "\e909";
+}
+.xef_icon_logo::before{
+    content: "\e920";
+}
+.xef_icon_name::before{
+    content: "\e93e";
+}
+.xef_icon_dollar::before{
+    content: "\e903";
+}
+.xef_icon_clock::before{
+    content: "\e906";
+}
+.xef_icon_video::before{
+    content: "\e905";
+}
+.xef_icon_news_01::before {
+    content: "\e90e";
+}
+
+.xef_icon_news_02::before {
+    content: "\e90f";
+}
+
+.xef_icon_news_03::before {
+    content: "\e910";
+}
+
+.xef_icon_news_04::before {
+    content: "\e911";
+}
+
+.xef_icon_partner01::before {
+    content: "\e946";
+}
+
+.xef_icon_partner02::before {
+    content: "\e92f";
+}
+
+.xef_icon_partner03::before {
+    content: "\e92e";
+}
+
+.xef_icon_partner04::before {
+    content: "\e92a";
+}
+
+.xef_icon_partner05::before {
+    content: "\e929";
+}
+
+.xef_icon_partner06::before {
+    content: "\e931";
+}
+
+.xef_icon_partner07::before {
+    content: "\e92c";
+}
+
+.xef_icon_partner08::before {
+    content: "\e92b";
+}
+
+.xef_icon_partner09::before {
+    content: "\e92d";
+}
+
+
+/*======modal css======*/
+.xef_topBar{
+    border-bottom: 1px solid #ccc;
+    font-size: 12px;
+    color: #666;
+}
+.xef_topBar > .container{}
+.xef_topBar > .container > .row{}
+/*.xef_topBar > .container > .row > div{
+    height: 40px;
+    border-left: 1px solid #ccc;
+}
+.xef_topBar > .container > .row > div:first-child{
+    border-left: none;
+}*/
+/*  +,~选择器   + 紧邻的下一个兄弟元素  ~ 后面所有的兄弟元素*/
+.xef_topBar > .container > .row > div{
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+}
+/*.xef_topBar > .container > .row > div ~ div{
+    border-left: 1px solid #ccc;
+}*/
+
+.xef_topBar .btn-register{
+    border: none;
+    background: #e92322;
+    color: #fff;
+    font-size: 12px;
+    padding: 3px 12px;
+}
+.xef_topBar .btn-register:hover{
+
+}
+.xef_topBar .btn-login{
+    font-size: 12px;
+    color: #666;
+}
+.xef_topBar .btn-login:hover{
+    text-decoration: none;
+    color: #666;
+}
+
+.xef_app{
+    display: block;
+}
+.xef_app img{
+    display: none;
+    width: 120px;
+    height: 120px;
+}
+.xef_app:hover img{
+    display: block;
+    position: absolute;
+    left: 50%;
+    margin-left:-60px;
+    border: 1px solid #ccc;
+    border-top: none;
+    top:40px;
+    z-index: 200000;
+}
+
+/*导航条*/
+/*1.拷贝源码的模块样式：准确定位到所有元素的选择器并且能保证优先级比源码高*/
+/*2.针对功能进行覆盖：更改模块名称*/
+/*3.但是有一些没有用到的选择器 代码的冗余*/
+/*4. 删除：降低代码量 */
+/*5. 保留：利于维护，方便产品跟新的时候不用再去修改代码 */
+.xef_nav {
+    margin-bottom: 0;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    /*固定导航样式*/
+    z-index: 1000;
+    background: #fff;
+    width: 100%;
+    border-radius: 0;
+    top: 0;
+}
+.xef_nav .xef_icon_logo{
+    font-size: 50px;
+    color: #e92322;
+    vertical-align: middle;
+}
+.xef_nav .xef_icon_name{
+    font-size: 36px;
+    color: #333;
+    vertical-align: middle;
+}
+
+.xef_nav .navbar-brand {
+    color: #777;
+    height: 80px;
+    line-height: 50px;
+}
+.xef_nav .navbar-brand img {
+    display: block;
+    width: 140px;
+    height: 50px;
+}
+.xef_nav .navbar-brand:hover,
+.xef_nav .navbar-brand:focus {
+    color: #5e5e5e;
+    background-color: transparent;
+}
+.xef_nav .navbar-text {
+    color: #777;
+}
+.xef_nav .navbar-nav > li > a {
+    color: #777;
+    height: 80px;
+    line-height: 50px;
+}
+.xef_nav .navbar-nav > li > a:hover,
+.xef_nav .navbar-nav > li > a:focus {
+    color: #777;
+    background-color: transparent;
+    border-bottom: 3px solid #e92322;
+}
+.xef_nav .navbar-nav > .active > a,
+.xef_nav .navbar-nav > .active > a:hover,
+.xef_nav .navbar-nav > .active > a:focus {
+    color: #555;
+    border-bottom: 3px solid #e92322;
+}
+.xef_nav .navbar-nav > .disabled > a,
+.xef_nav .navbar-nav > .disabled > a:hover,
+.xef_nav .navbar-nav > .disabled > a:focus {
+    color: #ccc;
+    background-color: transparent;
+}
+.xef_nav .navbar-toggle {
+    border-color: #ddd;
+    margin-top: 23px;
+}
+.xef_nav .navbar-toggle:hover,
+.xef_nav .navbar-toggle:focus {
+    background-color: #ddd;
+}
+.xef_nav .navbar-toggle .icon-bar {
+    background-color: #888;
+}
+.xef_nav .navbar-collapse,
+.xef_nav .navbar-form {
+    border-color: #e7e7e7;
+}
+.xef_nav .navbar-nav > .open > a,
+.xef_nav .navbar-nav > .open > a:hover,
+.xef_nav .navbar-nav > .open > a:focus {
+    color: #555;
+    background-color: transparent;
+}
+@media (max-width: 767px) {
+    .xef_nav .navbar-nav .open .xef_dropdown-menu > li > a {
+        color: #777;
+    }
+    .xef_nav .navbar-nav .open .xef_dropdown-menu > li > a:hover,
+    .xef_nav .navbar-nav .open .xef_dropdown-menu > li > a:focus {
+        color: #333;
+        background-color: transparent;
+    }
+    .xef_nav .navbar-nav .open .xef_dropdown-menu > .active > a,
+    .xef_nav .navbar-nav .open .xef_dropdown-menu > .active > a:hover,
+    .xef_nav .navbar-nav .open .xef_dropdown-menu > .active > a:focus {
+        color: #555;
+        background-color: #e7e7e7;
+    }
+    .xef_nav .navbar-nav .open .xef_dropdown-menu > .disabled > a,
+    .xef_nav .navbar-nav .open .xef_dropdown-menu > .disabled > a:hover,
+    .xef_nav .navbar-nav .open .xef_dropdown-menu > .disabled > a:focus {
+        color: #ccc;
+        background-color: transparent;
+    }
+}
+.xef_nav .navbar-link {
+    color: #777;
+}
+.xef_nav .navbar-link:hover {
+    color: #333;
+}
+.xef_nav .btn-link {
+    color: #777;
+}
+.xef_nav .btn-link:hover,
+.xef_nav .btn-link:focus {
+    color: #333;
+}
+.xef_nav .btn-link[disabled]:hover,
+fieldset[disabled] .xef_nav .btn-link:hover,
+.xef_nav .btn-link[disabled]:focus,
+fieldset[disabled] .xef_nav .btn-link:focus {
+    color: #ccc;
+}
+ .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    float: left;
+    min-width: 120px;
+    padding: 5px 0;
+    margin: 2px 0 0;
+    font-size: 14px;
+    text-align: left;
+    list-style: none;
+    background-color: #fff;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0, 0, 0, .15);
+    border-radius: 4px;
+    -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+}
+.xef_dropdown .dropdown-menu > li > a {
+    text-align: center;
+}
+.xef_dropdown .dropdown-menu > li > a:hover,
+.xef_dropdown .dropdown-menu > li > a:focus {
+    color: #262626;
+    text-decoration: none;
+    background-color: transparent;
+    border: none;
+    outline: 0;
+
+}
+
+
+/*轮播图*/
+.xef_banner .pc_imgBox{
+    display: block;
+    height: 320px;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+}
+.xef_banner .m_imgBox{
+    display: block;
+    width: 100%;
+}
+.xef_banner .m_imgBox img{
+    display: block;
+    width: 100%;
+}
+
+.carousel-indicators li {
+    display: inline-block;
+    width: 15px;
+    height: 8px;
+    margin: 1px;
+    text-indent: -999px;
+    cursor: pointer;
+    background-color: #000 \9;
+    background-color: rgba(0, 0, 0, 0);
+    border: 1px solid #fff;
+    border-radius: 1px;
+}
+.carousel-indicators li.active {
+    width: 18px;
+    height: 10px;
+    border-radius: 1px;
+    background-color: red;
+}
+
+
+/*信息*/
+
+/*字体图标*/
+.media .glyphicon-th-list,
+.media .glyphicon-envelope,
+.media .glyphicon-home,
+.media .glyphicon-thumbs-up,
+.media .glyphicon-phone,
+.media .glyphicon-folder-open{
+    display: block;
+    margin-right:14px;
+    font-size: 25px;
+}
+.xef_info{
+    border-bottom: 1px solid #ccc;
+    padding: 15px 0;
+}
+.xef_info > .container{
+    width: 900px;
+}
+/*在小屏设备的时候  容器的宽750px*/
+/*如果不满足需求需要自己使用媒体查询*/
+@media (min-width: 768px) and (max-width: 992px) {
+    .xef_info > .container{
+        width: 750px;
+    }
+}
+.xef_info > .container > div > a{
+    display: block;
+    padding: 15px 0;
+}
+.xef_info > .container > div > a:hover{
+    color: #3c9be9;
+}
+.xef_info > .container > div > a .xef_icon_dollar{
+    font-size: 30px;
+}
+
+/*预约模块*/
+.xef_book{
+    padding: 40px 0;
+    border-bottom: 1px solid #ccc;
+}
+.xef_book > .container{
+    width: 900px;
+}
+@media (min-width: 768px) and (max-width: 992px) {
+    .xef_book > .container{
+        width: 750px;
+    }
+}
+@media (max-width: 768px) {
+    .xef_book > .container{
+        width: 100%;
+    }
+}
+.xef_book .book{
+    color: #e92322;
+    border-bottom: 1px dashed #e92322;
+}
+.xef_book .video:hover{
+    color: #e92322;
+}
+.xef_book .xef_icon{
+    font-size: 20px;
+}
+
+/*产品*/
+.xef_product{
+    padding: 20px 0;
+    background: #f5f5f5;
+    border-bottom: 1px solid #ccc;
+}
+.xef_product .nav-tabs-parent{
+    width: 100%;
+    overflow: hidden;
+}
+.xef_product .nav-tabs {
+    border-bottom: 1px solid #ddd;
+}
+.xef_product .nav-tabs > li {
+    float: left;
+    margin-bottom: 0;
+    margin-left:15px;
+}
+.xef_product .nav-tabs > li > a {
+    margin-right: 2px;
+    line-height: 1.42857143;
+    border: none;
+    border-radius: 4px 4px 0 0;
+}
+.xef_product .nav-tabs > li > a:hover {
+    background: #f5f5f5;
+}
+.xef_product .nav-tabs > li.active > a,
+.xef_product .nav-tabs > li.active > a:hover,
+.xef_product .nav-tabs > li.active > a:focus {
+    color: #555;
+    cursor: default;
+    background-color: #f5f5f5;
+    border: none;
+    border-bottom: 3px solid #e92322;
+}
+.xef_product .nav-tabs.nav-justified {
+    width: 100%;
+    border-bottom: 0;
+}
+.xef_product .nav-tabs.nav-justified > li {
+    float: none;
+}
+.xef_product .nav-tabs.nav-justified > li > a {
+    margin-bottom: 5px;
+    text-align: center;
+}
+.xef_product .nav-tabs.nav-justified > .xef_dropdown .xef_dropdown-menu {
+    top: auto;
+    left: auto;
+}
+@media (min-width: 768px) {
+    .xef_product .nav-tabs.nav-justified > li {
+        display: table-cell;
+        width: 1%;
+    }
+    .xef_product .nav-tabs.nav-justified > li > a {
+        margin-bottom: 0;
+    }
+}
+.xef_product .nav-tabs.nav-justified > li > a {
+    margin-right: 0;
+    border-radius: 4px;
+}
+.xef_product .nav-tabs.nav-justified > .active > a,
+.xef_product .nav-tabs.nav-justified > .active > a:hover,
+.xef_product .nav-tabs.nav-justified > .active > a:focus {
+    border: 1px solid #ddd;
+}
+@media (min-width: 768px) {
+    .xef_product .nav-tabs.nav-justified > li > a {
+        border-bottom: 1px solid #ddd;
+        border-radius: 4px 4px 0 0;
+    }
+    .xef_product .nav-tabs.nav-justified > .active > a,
+    .xef_product .nav-tabs.nav-justified > .active > a:hover,
+    .xef_product .nav-tabs.nav-justified > .active > a:focus {
+        border-bottom-color: #fff;
+    }
+}
+.product_box{
+    display: block;
+    width: 100%;
+    height: 150px;
+    background: #fff;
+    box-shadow: 3px 3px 5px #d8d8d8;
+    margin-top: 30px;
+    color: #666;
+}
+.product_box:hover{
+    color: #666;
+    transform:scale(1.1);
+    -webkit-transform: scale(1.05);
+}
+.product_box.active{
+    background: #e92322;
+    color: #fff;
+    position: relative;
+}
+/*:  ::  css3规范 :伪类  :: 为元素*/
+.product_box.active::before{
+    content: "\e915";
+    position: absolute;
+    left: 0;
+    top: -7px;
+    font-family: xef;
+    font-size: 33px;
+}
+
+.product_box .pro_left{
+    overflow: hidden;
+}
+.product_box .pro_left h3{
+    font-size: 16px;
+    margin-top: 10px;
+}
+.product_box .pro_left div{
+    font-size: 12px;
+}
+
+/*浮动元素优先 两栏自适应注意*/
+.product_box .pro_right{
+    float: right;
+    width: 80px;
+    height: 150px;
+    text-align: center;
+    border-left: 1px dashed #ccc;
+    position: relative;
+}
+.product_box .pro_right::before,
+.product_box .pro_right::after{
+    content: "";
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-radius: 6px;
+    background: #f5f5f5;
+    left: -6px;
+}
+.product_box .pro_right::before{
+    top: -6px;
+    /*
+    参数1：x轴的偏移
+    参数2：y轴的偏移
+    参数3：阴影的模糊的
+    参数4：阴影的延伸
+    参数5：阴影的颜色
+    参数6：内阴影
+    */
+    box-shadow: 0 -2px 2px #d8d8d8 inset;
+}
+.product_box .pro_right::after{
+    bottom: -6px;
+    box-shadow: 0 2px 2px #d8d8d8 inset;
+}
+.product_box .pro_right .tips{
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 100%;
+}
+.product_box .pro_right .tips span{
+    width: 16px;
+    height: 16px;
+    text-align: center;
+    line-height: 16px;
+    border-width: 1px;
+    border-style: solid;
+    display: inline-block;
+}
+.product_box .pro_right .tips .red{
+    color: red;
+    border-color: red;
+}
+.product_box .pro_right .tips .green{
+    color: green;
+    border-color: green;
+}
+
+    /*
+    找到P元素，通过P找到父元素，通过父元素找子元素当中类型为P的，然再去找第几个。
+    p:first-of-type
+    p:last-of-type
+    p:nth-of-type(n)
+    p:nth-last-of-type(n)
+    如果使用的是child;
+    p:first-child
+    找到P元素,通过P找到父元素，通过父元素找所有的子元素，找第一个元素，匹配判断类型(如果不是无效选择器)
+    */
+.product_box .pro_right p:first-of-type{
+    margin-top: 25px;
+    color: #e92322;
+}
+.product_box.active .pro_right p:first-of-type{
+    color: #fff;
+}
+.product_box .pro_right p:first-of-type b{
+    font-size: 48px;
+}
+.product_box .pro_right p:first-of-type sub{
+    bottom: 0;
+    font-size: 12px;
+}
+.product_box .pro_right p:last-child{}
+
+/*新闻区块*/
+.xef_news{
+    padding: 40px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.xef_news .xef_news_title{
+    font-size: 20px;
+    height: 50px;
+    line-height: 50px;
+    border-bottom: 1px solid #ccc;
+    position: relative;
+    text-align: center;
+}
+.xef_news .xef_news_title::after{
+    content: "";
+    position: absolute;
+    right: -6px;
+    bottom: -3px;
+    width: 6px;
+    height: 6px;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+}
+.xef_news .xef_news_line{
+    position: absolute;
+    width: 1px;
+    height: 100%;
+    border-left: 1px dashed #ccc;
+    left: 45px;
+    top: 0;
+}
+.xef_news .xef_news_content{
+    list-style: none;
+}
+.xef_news .xef_news_content li a{
+    display: block;
+    padding: 15px 0;
+    color: #666;
+}
+
+.xef_news .nav-tabs {
+    border-bottom:none;
+}
+.xef_news .nav-tabs > li {
+    float: left;
+    margin-bottom: -1px;
+}
+.xef_news .nav-tabs > li > a {
+    margin-right: 0;
+    border: none;
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    background: #ccc;
+    margin-bottom:60px;
+    padding: 0;
+    line-height: 60px;
+    text-align: center;
+    color: #fff;
+    font-size: 30px;
+}
+/*1.在小屏设备  间距固定 没有虚线*/
+@media (min-width: 768px) and (max-width: 992px){
+    .xef_news .nav-tabs > li > a{
+        margin: 30px 50px;
+    }
+}
+/*2.超小屏设备  间距自适应  没有虚线*/
+@media (max-width: 768px) {
+    .xef_news .nav-tabs > li{
+        width: 25%;
+    }
+    .xef_news .nav-tabs > li > a{
+        margin: 30px auto;
+    }
+}
+
+.xef_news .nav-tabs > li:last-child > a{
+    margin-bottom:0;
+}
+.xef_news .nav-tabs > li > a:hover {
+}
+.xef_news .nav-tabs > li.active > a,
+.xef_news .nav-tabs > li.active > a:hover,
+.xef_news .nav-tabs > li.active > a:focus {
+    color: #fff;
+    cursor: default;
+    background-color: #e92322;
+    border: none;
+    border-bottom-color: transparent;
+}
+.xef_news .nav-tabs.nav-justified {
+    width: 100%;
+    border-bottom: 0;
+}
+.xef_news .nav-tabs.nav-justified > li {
+    float: none;
+}
+.xef_news .nav-tabs.nav-justified > li > a {
+    margin-bottom: 5px;
+    text-align: center;
+}
+.xef_news .nav-tabs.nav-justified > .xef_dropdown .xef_dropdown-menu {
+    top: auto;
+    left: auto;
+}
+@media (min-width: 768px) {
+    .xef_news .nav-tabs.nav-justified > li {
+        display: table-cell;
+        width: 1%;
+    }
+    .xef_news .nav-tabs.nav-justified > li > a {
+        margin-bottom: 0;
+    }
+}
+.xef_news .nav-tabs.nav-justified > li > a {
+    margin-right: 0;
+    border-radius: 4px;
+}
+.xef_news .nav-tabs.nav-justified > .active > a,
+.xef_news .nav-tabs.nav-justified > .active > a:hover,
+.xef_news .nav-tabs.nav-justified > .active > a:focus {
+    border: 1px solid #ddd;
+}
+@media (min-width: 768px) {
+    .xef_news .nav-tabs.nav-justified > li > a {
+        border-bottom: 1px solid #ddd;
+        border-radius: 4px 4px 0 0;
+    }
+    .xef_news .nav-tabs.nav-justified > .active > a,
+    .xef_news .nav-tabs.nav-justified > .active > a:hover,
+    .xef_news .nav-tabs.nav-justified > .active > a:focus {
+        border-bottom-color: #fff;
+    }
+}
+
+/*合作伙伴*/
+.xef_partner{
+    padding: 50px 0;
+}
+.xef_partner ul{
+    list-style: none;
+    text-align: center;
+    padding: 0;
+}
+.xef_partner ul li{
+    display: inline-block;
+}
+.xef_partner ul li a{
+    font-size: 70px;
+    padding: 0 15px;
+    display: block;
+}
+
+/*信息后面加*/
+#product_nav02 .container{
+    margin: 10px 0;
+}
+#product_nav02 .container .col-sm-6 {
+    margin-top: 40px;
+    text-align: center;
+}
+#product_nav02 .container a {
+    display: block;
+
+}
+#product_nav02 .container a:hover span {
+    display: block;
+    color: red;
+}
+#product_nav02 .container h3 {
+    font-size: 24px;
+}
+#product_nav02 .container span.red {
+    color: red;
+}
+/*信息数据表格*/
+#product_nav03 > #home {
+    width: 100%;
+    margin-top: 20px;
+}
+#product_nav03 .financeInvest_dynamic_table_tr {
+    width: 100%;
+    height: 40px;
+}
+#product_nav03 .financeInvest_dynamic_table_tr .finical_table {
+    width: 20%;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+}
+#product_nav03 .navigation>.nav-tabs {
+    border-bottom: 0;
+}
+#product_nav04 a{
+    width: 100%;
+    height: 150px;
+    margin: 20px auto 0;
+    display: block;
+    background: url("../images/tt01.jpg") no-repeat center/cover;
+    line-height: 150px;
+    text-align: center;
+
+}
+#product_nav04 a span {
+    display: inline-block;
+    width: 10%;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    background: linear-gradient(to left, rgb(255, 193, 20), rgb(255, 121, 0));
+    color: #fff;
+    font-size: 16px;
+    margin-left: 80%;
+    overflow: hidden;
+    margin-top: 40px;
+
+
+
+
+}
+/*数据分析*/
+.table_container {
+    background-color: #fff;
+    height: 600px;
+}
+.table_container  .container_title {
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    border-bottom: 1px solid #cdcdcd;
+    text-align: center;
+    margin-left: 32px;
+}
+.table_container  .container_title h3 {
+    display: block;
+    float: left;
+    font-size: 14px;
+    color: #333;
+    font-weight: bold;
+    text-align: center;
+}
+.table_container  .width1 {
+    width: 200px;
+}
+.table_container  .width2 {
+    width: 140px;
+}
+.table_container  .width3 {
+    width: 185px;
+}
+.table_container  .width4 {
+    width: 140px;
+}
+.table_container  .width5 {
+    width: 140px;
+}
+.container_list_box ul {
+    list-style: none;
+    display: block;
+    float: left;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+}
+.container_list_box ul li {
+    float: left;
+    text-align: center;
+
+}
+.contentred {
+    color: red;
+    font-weight: bold;
+}
+.confirst .new_hand {
+    display: block;
+    float: left;
+    width: 40px;
+    height: 20px;
+    background-color: red;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    color: #fff;
+    font-size: 10px;
+    line-height: 20px;
+    text-align: center;
+    margin-top: 10px;
+}
+.confirst .save_time {
+    display: block;
+    float: left;
+    width: 40px;
+    height: 20px;
+    background-color: #ffdc3a;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    color: #fff;
+    font-size: 10px;
+    line-height: 20px;
+    text-align: center;
+    margin-top: 7px;
+}
+.tuijian img {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+.container_list_box ul:hover {
+     background-color: #e9d4dc;
+ }
+.container_list_box ul:hover a {
+    color: #fff;
+}
+.live {
+    width: 80px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    background-color: red;
+    border-radius: 5px;
+    color: #fff;
+    display: block;
+    margin-top: 5px;
+    margin-left: 24px;
+}
+
+/*特供计划*/
+.new .new_left h2,
+.new .new_right h2{
+    font-size: 20px;
+}
+.new .new_title {
+    display: block;
+    margin-left: 40px;
+}
+.new .new_left h2 span,
+.new .new_right h2 span {
+
+}
+.new .new_left h2>a,
+.new .new_right h2>a {
+    font-size: 14px;
+    padding-left: 300px;
+}
+.new .new_left h2>a:hover,
+.new .new_right h2>a:hover {
+    color: #e92322;
+}
+.new_list {
+    display: block;
+    margin-top: 20px;
+}
+.new_list .news_item {
+    height: 40px;
+    line-height: 40px;
+    list-style: none;
+}
+.new_list .news_item .news_link {
+    float: left;
+}
+.new_list .news_item .news_link:hover a {
+    color: #e92322;
+}
+.new_list .news_item .news_time {
+    float: right;
+}
+/*媒体报道*/
+#product_nav07 .container .col-md-8,
+#product_nav07 .container .col-md-4{
+
+    margin-top: 20px;
+}
+#product_nav07 .container .col-md-8 {
+    background-color: #fff;
+}
+#product_nav07 .container .col-md-4 {
+
+}
+#product_nav07 .container .col-md-4 .index_pilu_wrap {
+
+}
+#product_nav07 .container .col-md-4 .index_pilu_wrap img {
+    width: 170px;
+    height: 100px;
+    vertical-align: middle;
+}
+#product_nav07 .container .col-md-4 .index_announcement {
+    margin: 10px 0;
+    height: 30px;
+    line-height: 30px;
+}
+#product_nav07 .container .col-md-4 .index_announcement img {
+    vertical-align: middle;
+}
+#product_nav07 .container .col-md-4 .index_announcement .hover_red {
+    margin-left: 160px;
+}
+#product_nav07 .container .col-md-4 .index_announcement .hover_red:hover {
+    color: #2aabd2;
+}
+
+#product_nav07 .container .col-md-8 .biaoti {
+    width: 100%;
+    height: 40px;
+    border-bottom: 1px solid #ccc;
+}
+#product_nav07 .container .col-md-8 .index_table .width_20 {
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    width: 600px;
+}
+.middle {
+    display: block;
+    margin-left: 40px;
+}
+.middle label {
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    background-color: #4f99d2;
+    color: #fff;
+    text-align: center;
+    border-radius: 4px;
+    margin-right: 4px;
+}
+.index_heimingdan {
+
+}
+.index_heimingdan .index_heimingdan_title {
+    font-size: 18px;
+    border-bottom: 1px solid #ccc;
+}
+.index_heimingdan_form_left{
+    margin-top: 10px;
+    float: left;
+}
+.index_heimingdan_form_left label {
+    font-weight: normal;
+}
+.index_heimingdan_form_left input {
+    height: 30px;
+    margin-top: 10px;
+    margin-left: 10px;
+    border: 0;
+    outline: 0;
+}
+.index_heimingdan_form_right {
+    float: left;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+.index_heimingdan_form_right a {
+    display: block;
+    width: 60px;
+    height: 70px;
+    border-radius: 5px;
+    background-color: #4489d2;
+    line-height: 70px;
+    color: #fff;
+    text-align: center;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.xef_news_content li a {
+    max-width: 400px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.xef_news_content li a:hover {
+    color: #ab0d14;
+}
+.xef_partner .container li a:hover {
+    color: #ab0d14;
+}
